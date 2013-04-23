@@ -1,0 +1,26 @@
+{
+  "name": "packageroot",
+  "version": "0.0.0",
+  "description": "return the closest parent or current directory that contains a package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/soldair/node-gitconfiglocal.git"
+  },
+  "keywords": [
+    "packages",
+    "root"
+  ],
+  "author": "Ryan Day",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "tape": "~0.3.3"
+  },
+  "dependencies": {
+    "parents": "0.0.1"
+  }
+}
