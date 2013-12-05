@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/soldair/node-gitconfiglocal.git"
+    "url": "git://github.com/soldair/node-packageroot.git"
   },
   "keywords": [
     "packages",
