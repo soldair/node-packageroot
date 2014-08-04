@@ -26,3 +26,13 @@ module.exports = function(dir,cb){
 
   })();
 }
+
+module.exports.sync = function(dir){
+  var dirs = parents(dir);
+
+  for(var i=0;i<dirs.length;++i){
+    if(fs.existsSync(path.join(dirs[i],'package.json'))){
+      return dirs[i];
+    }
+  }
+}
