@@ -1,10 +1,10 @@
 {
   "name": "packageroot",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "return the closest parent or current directory that contains a package.json",
   "main": "index.js",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
