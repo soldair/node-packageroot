@@ -32,7 +32,6 @@ module.exports = function(dir,cb){
 module.exports.sync = function(dir){
   dir = fs.realpathSync(dir);
   var dirs = parents(dir);
-  console.log(dirs);
   for(var i=0;i<dirs.length;++i){
     if(fs.existsSync(path.join(dirs[i],'package.json'))){
       return dirs[i];
