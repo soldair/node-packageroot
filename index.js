@@ -11,6 +11,8 @@ module.exports = function(dir,cb){
     });
   }
 
+  dirs.unshift(dir);
+
   (function fn(){
     if(!dirs.length) cb(new Error('could not find package.json at or above '+dir));
 
@@ -18,7 +20,9 @@ module.exports = function(dir,cb){
     var p = path.join(d,'package.json');
     fs.exists(p,function(exists){
       if(exists) {
-        cb(false,d);
+        fs.realpath(d,function(err,d){
+          cb(err,d);
+        });
       } else {
         fn();
       }
@@ -29,10 +33,10 @@ module.exports = function(dir,cb){
 
 module.exports.sync = function(dir){
   var dirs = parents(dir);
-
+  dirs.unshift(dir);
   for(var i=0;i<dirs.length;++i){
     if(fs.existsSync(path.join(dirs[i],'package.json'))){
-      return dirs[i];
+      return fs.realpathSync(dirs[i]);
     }
   }
 }
